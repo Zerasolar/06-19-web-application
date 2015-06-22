@@ -1,0 +1,8 @@
+<h1> Click the item serial number you want to change </h1>
+  
+<ul>
+  <% Good.all.each do |list| %>
+  <p><li><a href="/change_serial_number_form/<%= list.id %>"><%= list.serial_number%> <%= list.name %></a></li></p>
+  <% end %>
+</ul>
+<a href="/change_good">Back</a>

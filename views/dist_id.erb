@@ -1,0 +1,8 @@
+<h1> Click the item distributor_id you want to change </h1>
+  
+<ul>
+  <% Good.all.each do |list| %>
+  <p><li><a href="/change_dist_id_form/<%= list.id %>"><%= list.distributor_id%> <%= list.name %></a></li></p>
+  <% end %>
+</ul>
+<a href="/change_good">Back</a>

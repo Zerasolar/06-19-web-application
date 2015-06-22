@@ -1,0 +1,8 @@
+<h1> Click the product type you want to change </h1>
+  
+<ul>
+  <% Product.all.each do |list| %>
+  <p><li><a href="/change_type_form/<%= list.id %>"><%= list.type %></a></li></p>
+  <% end %>
+</ul>
+<a href="/prod_menu">Back</a>

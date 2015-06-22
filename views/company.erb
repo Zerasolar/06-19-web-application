@@ -1,0 +1,8 @@
+<h1> Click the distributor company you want to change </h1>
+  
+<ul>
+  <% Distributor.all.each do |list| %>
+  <p><li><a href="/change_company_form/<%= list.id %>"><%= list.company %></a></li></p>
+  <% end %>
+</ul>
+<a href="/dist_menu">Back</a>

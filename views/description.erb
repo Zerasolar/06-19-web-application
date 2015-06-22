@@ -1,0 +1,8 @@
+<h1> Click the item description you want to change </h1>
+  
+<ul>
+  <% Good.all.each do |list| %>
+  <p><li><a href="/change_description_form/<%= list.id %>"><%= list.description%> <%= list.name %></a></li></p>
+  <% end %>
+</ul>
+<a href="/change_good">Back</a>

@@ -1,0 +1,8 @@
+<h1> Click the item product id you want to change </h1>
+  
+<ul>
+  <% Good.all.each do |list| %>
+  <p><li><a href="/change_prod_id_form/<%= list.id %>"><%= list.product_id%> <%= list.name %></a></li></p>
+  <% end %>
+</ul>
+<a href="/change_good">Back</a>

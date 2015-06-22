@@ -1,0 +1,8 @@
+<h1> Here is the list of all the Distributors </h1>
+  
+<ul>
+  <% Distributor.all.each do |list| %>
+  <p><li><%= "#{list.id} - #{list.company}" %></li></p>
+  <% end %>
+</ul>
+<a href="/dist_menu">Back</a>

@@ -1,0 +1,41 @@
+<h1> Adding a Good </h1>
+
+<form action="/save_good">
+
+  What is the Serial Number for the iteam?<br>
+  <input type "text" placeholder="ex. 555-555" name="serial_number">
+  <br>
+  What is the distributor for this item?<br>
+  <select name="company">
+    <% Distributor.all.each do |dist| %>
+    <option value="<%= dist.company %>"><%= dist.company %></options>
+      <% end %>
+    </select>
+
+    What is the product for this item?<br>
+    <select name="type">
+      <% Product.all.each do |product| %>
+      <option value="<% product.type %>"> <%= product.type %> </options>
+        <% end %>
+      </select>
+
+      What is the Name for the iteam?<br>
+      <input type "text" placeholder="ex. One Piece Part 14" name="name">
+      <br>
+  
+      What is the Description for the iteam?<br>
+      <input type "text" placeholder="ex. This series is about...." name="description">
+      <br>
+  
+      What is the Cost of the iteam?<br>
+      <input type "text" placeholder="ex. 49.99" name="cost">
+      <br>
+  
+      What is the Quantity for the iteam?<br>
+      <input type "text" placeholder="ex. 30" name="quantity">
+      <br><br>
+  
+      <input type= "submit">
+    </form>
+
+    <a href="/home">Back</a>

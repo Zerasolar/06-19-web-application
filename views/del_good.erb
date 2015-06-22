@@ -1,0 +1,15 @@
+<h1> Deleting a Good </h1>
+
+<form action="/gone_good">
+
+  Which one do you want to delete?<br>
+  <form>
+    <% Good.all.each do |list| %>
+    <input type="checkbox" name="<% list.name%>" value ="<% list.id%>"> <%= list.name%><br>
+    <input type="hidden" name="x" value="<%= params["x"] %>">
+     <%binding.pry%>
+    <% end %>
+    <input type= "submit">
+  </form>
+
+  <a href="/delete">Back</a>

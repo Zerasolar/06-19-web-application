@@ -1,0 +1,8 @@
+<h1> Here is the list of all the Products </h1>
+  
+<ul>
+  <% Product.all.each do |list| %>
+  <p><li><%= "#{list.id} - #{list.type}" %></li></p>
+  <% end %>
+</ul>
+<a href="/prod_menu">Back</a>

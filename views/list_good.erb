@@ -1,0 +1,8 @@
+<h1> Here is the list of all the Items </h1>
+  
+<ul>
+  <% Good.all.each do |list| %>
+  <p><li><%= "#{list.id} - #{list.serial_number} - #{list.distributor_id} - #{list.product_id} - #{list.name} - #{list.description} - #{list.cost} - #{list.quantity}" %></li></p>
+  <% end %>
+</ul>
+<a href="/home">Back</a>
