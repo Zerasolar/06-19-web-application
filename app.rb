@@ -171,13 +171,16 @@ get "/delete" do
   erb :"delete_menu"
 end
 
-get "/del_good" do
+get"/del_good" do
   erb :"del_good"
 end
 
 get"/gone_good" do
-  good = Good.delete_row(params["x"].to_i)
+  params["good"].each do |good|
+  Good.delete_row(good)
+  end
   erb :"gone"
+
 end
 
 get "/dist_menu" do
