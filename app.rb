@@ -104,7 +104,6 @@ get "/edit_save" do
   end
   @good_instant.save
   erb :"changed"
-  
 end
 
 # get "/dist_id" do
