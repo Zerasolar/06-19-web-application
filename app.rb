@@ -51,121 +51,157 @@ get "/save_good" do
   erb :"added"
 end
 
-get "/change_good" do
-  erb :"change_good_menu"
+# get "/change_good" do
+#   erb :"good"
+# end
+#
+# get "/serial_number" do
+#   erb :"serial_number"
+# end
+#
+# get"/change_serial_number_form/:x" do
+#   erb :"change_serial_number_form"
+# end
+#
+# get"/change_serial_number" do
+#
+#   good = Good.find(params["x"].to_i)
+#   good.serial_number = params["serial_number"]
+#   good.save
+#   erb :"changed"
+# end
+get "/good_to_change" do
+  erb :"change_good"
 end
 
-get "/serial_number" do
-  erb :"serial_number"
+get "/change_good_form/:x" do
+  @good_instance = Good.find(params["x"])
+  erb :"good"
 end
 
-get"/change_serial_number_form/:x" do
-  erb :"change_serial_number_form"
-end
-
-get"/change_serial_number" do
-
-  good = Good.find(params["x"].to_i)
-  good.serial_number = params["serial_number"]
-  good.save
+get "/edit_save" do
+  @good_instance = Good.find(params["id"])
+  if !params["serial_number"].empty?
+    @good_instant.serial_number = params["serial_number"]
+  end
+  if !params["distributor_id"].empty?
+    @good_instant.distributor_id = params["distributor_id"].to_i
+  end
+  if !params["product_id"].empty?
+    @good_instant.product_id = params["product_id"].to_i
+  end
+  if !params["name"].empty?
+    @good_instant.name = params["name"]
+  end
+  if !params["descriptioin"].empty?
+    @good_instant.description = params["description"]
+  end
+  if !params["cost"].empty?
+    @good_instant.cost = params["cost"].to_f
+  end
+  if !params["quantity"].empty?
+    @good_instant.quantity = params["quantity"].to_i
+  end
+  @good_instant.save
   erb :"changed"
+  
 end
 
-get "/dist_id" do
-  erb :"dist_id"
-end
-
-get"/change_dist_id_form/:x" do
-  erb :"change_dist_id_form"
-end
-
-get"/change_dist_id" do
-
-  good = Good.find(params["x"].to_i)
-  good.distributor_id = params["distributor_id"]
-  good.save
-  erb :"changed"
-end
-
-get "/prod_id" do
-  erb :"prod_id"
-end
-
-get"/change_prod_id_form/:x" do
-  erb :"change_dist_id_form"
-end
-
-get"/change_prod_id" do
-
-  good = Good.find(params["x"].to_i)
-  good.product_id = params["product_id"]
-  good.save
-  erb :"changed"
-end
-
-get "/name" do
-  erb :"name"
-end
-
-get"/change_name_form/:x" do
-  erb :"change_name_form"
-end
-
-get"/change_name" do
-
-  good = Good.find(params["x"].to_i)
-  good.name = params["name"]
-  good.save
-  erb :"changed"
-end
-
-get "/description" do
-  erb :"description"
-end
-
-get"/change_description_form/:x" do
-  erb :"change_description_form"
-end
-
-get"/change_description" do
-
-  good = Good.find(params["x"].to_i)
-  good.description = params["description"]
-  good.save
-  erb :"changed"
-end
-
-get "/cost" do
-  erb :"dist_id"
-end
-
-get"/change_cost_form/:x" do
-  erb :"change_cost_form"
-end
-
-get"/change_cost" do
-
-  good = Good.find(params["x"].to_i)
-  good.cost = params["cost"]
-  good.save
-  erb :"changed"
-end
-
-get "/quantity" do
-  erb :"quantity"
-end
-
-get"/change_quantity_form/:x" do
-  erb :"change_quantity_form"
-end
-
-get"/change_quantity" do
-
-  good = Good.find(params["x"].to_i)
-  good.quantity = params["quantity"]
-  good.save
-  erb :"changed"
-end
+# get "/dist_id" do
+#   erb :"dist_id"
+# end
+#
+# get"/change_dist_id_form/:x" do
+#   erb :"change_dist_id_form"
+# end
+#
+# get"/change_dist_id" do
+#
+#   good = Good.find(params["x"].to_i)
+#   good.distributor_id = params["distributor_id"]
+#   good.save
+#   erb :"changed"
+# end
+#
+# get "/prod_id" do
+#   erb :"prod_id"
+# end
+#
+# get"/change_prod_id_form/:x" do
+#   erb :"change_dist_id_form"
+# end
+#
+# get"/change_prod_id" do
+#
+#   good = Good.find(params["x"].to_i)
+#   good.product_id = params["product_id"]
+#   good.save
+#   erb :"changed"
+# end
+#
+# get "/name" do
+#   erb :"name"
+# end
+#
+# get"/change_name_form/:x" do
+#   erb :"change_name_form"
+# end
+#
+# get"/change_name" do
+#
+#   good = Good.find(params["x"].to_i)
+#   good.name = params["name"]
+#   good.save
+#   erb :"changed"
+# end
+#
+# get "/description" do
+#   erb :"description"
+# end
+#
+# get"/change_description_form/:x" do
+#   erb :"change_description_form"
+# end
+#
+# get"/change_description" do
+#
+#   good = Good.find(params["x"].to_i)
+#   good.description = params["description"]
+#   good.save
+#   erb :"changed"
+# end
+#
+# get "/cost" do
+#   erb :"dist_id"
+# end
+#
+# get"/change_cost_form/:x" do
+#   erb :"change_cost_form"
+# end
+#
+# get"/change_cost" do
+#
+#   good = Good.find(params["x"].to_i)
+#   good.cost = params["cost"]
+#   good.save
+#   erb :"changed"
+# end
+#
+# get "/quantity" do
+#   erb :"quantity"
+# end
+#
+# get"/change_quantity_form/:x" do
+#   erb :"change_quantity_form"
+# end
+#
+# get"/change_quantity" do
+#
+#   good = Good.find(params["x"].to_i)
+#   good.quantity = params["quantity"]
+#   good.save
+#   erb :"changed"
+# end
 
 get "/delete" do
   erb :"delete_menu"
@@ -177,10 +213,31 @@ end
 
 get"/gone_good" do
   params["good"].each do |good|
-  Good.delete_row(good)
+    Good.delete_row(good)
   end
   erb :"gone"
+end
 
+get"/del_dist" do
+  erb :"del_dist"
+end
+
+get"/gone_dist" do
+  params["dist"].each do |dist|
+    Distributor.delete_row(dist)
+  end
+  erb :"gone"
+end
+
+get"/del_prod" do
+  erb :"del_prod"
+end
+
+get"/gone_prod" do
+  params["prod"].each do |prod|
+    Product.delete_row(prod)
+  end
+  erb :"gone"
 end
 
 get "/dist_menu" do
@@ -229,6 +286,7 @@ end
 
 get "/save_prod" do
   @new_prod = Product.add({"type" => params["type"]})
+  erb :added
 end
 
 get "/change_prod" do

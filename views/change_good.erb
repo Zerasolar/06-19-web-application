@@ -1,0 +1,8 @@
+<h1> Click the item you want to change </h1>
+  
+<ul>
+  <% Good.all.each do |list| %>
+  <li><a href="/change_good_form/<%= list.id %>"><%= list.serial_number%> Distributor:<%= list.distributor_id %> Product:<%= list.product_id %> Name:<%= list.name %> Cost:<%= list.cost %> Quantity:<%= list.quantity %></a></li>
+  <% end %>
+</ul>
+<a href="/home">Back</a>

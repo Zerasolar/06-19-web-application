@@ -1,0 +1,13 @@
+<h1> Deleting a Product </h1>
+
+<form action="/gone_prod">
+
+  Which one do you want to delete?<br>
+    <% Product.all.each do |list| %>
+    <input type="checkbox" name= "prod[]" value= "<%= list.id%>"> <%= list.type%><br>
+    <% end %>
+  <input type= "submit">
+</form>
+
+<a href="/delete">Back</a>
+

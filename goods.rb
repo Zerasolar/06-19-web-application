@@ -37,25 +37,7 @@ class Good
   # id - The Integer ID of the good table to return.
   #
   # Returns a Good object.
-  # def self.find_object(id)
- #    result = Good.find(id)
- #    # DATABASE.execute returns an Array of Hashes, like:
- #    # {"id" => 1, "serial_number" => "234-432", "distributor_id" => "1", "product_id" =>
- #    # "1", "name" => "Naruto Volume 1", "description" => "blah blah blah", "cost" => "9.99",
- #    # "quantity" => "25"}
- #
- #    temp_serial_number = result["serial_number"]
- #    temp_distributor_id = result["distributor_id"]
- #    temp_product_id = result["product_id"]
- #    temp_name = result["name"]
- #    temp_description = result["description"]
- #    temp_cost = result["cost"]
- #    temp_quantity = result["quantity"]
- #
- #    id = DATABASE.last_insert_row_id
- #
- #    Good.new("id" => id,"serial_number" => temp_serial_number, "distributor_id" => temp_distributor_id, "product_id" => temp_product_id, "name" => temp_name, "description" => temp_description, "cost" => temp_cost, "quantity" => temp_quantity)
- #  end
+  
   # Updates the database with all the values for the good table.
   #
   # Returns an empty Array.

@@ -1,0 +1,32 @@
+<h1> Edit Good </h1>
+Here are items you could edit. Enter any changes to the item you want and submit.
+<form action="/edit_save">
+  
+  <p> New Serial Number : <input type="text" placeholder="Serial Number" name="serial_number" value=" <%=@good_instance.serial_number%>"></p>
+  
+  <p> New Distributor: <select name="distributor_id"></p>
+    <% @distributor = Distributor.find(@good_instance.distributor_id)%>
+    <%Distributor.all.each do |company| %>
+    <option value="<%= @good_instance.distributor_id %>" <%="selected" if @distributor.id == @good_instance.distributor_id%>> <%= @distributor.company %></option>
+    <% end %>
+  </select>
+ 
+  <p> New Product: <select name="product_id"></p>
+    <% @product = Product.find(@good_instance.product_id)%>
+    <%Product.all.each do |type| %>
+    <option value="<%= @good_instance.product_id %>" <%="selected" if @product.id == @good_instance.product_id%>> <%= @product.type %></option>
+    <% end %>
+  </select>
+    
+  <p> New Name : <input type="text" placeholder="Name" name="name" value=" <%=@good_instance.name%>"></p>
+      
+  <p> New Description : <input type="text" placeholder="Description" name="description" value=" <%=@good_instance.description%>"></p>
+        
+  <p> New Cost : <input type="text" placeholder="Cost" name="cost" value=" <%=@good_instance.cost%>"></p>
+          
+  <p> New Quantity: <input type="text" placeholder="Quantity" name="quantity" value=" <%=@good_instance.quantity%>"></p>
+    
+  <p> <input type="submit" value="submit changes"></p>
+</form>
+
+<a href="<%= request.referer %>">Back</a>
