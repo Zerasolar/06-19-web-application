@@ -4,6 +4,7 @@ Here are items you could edit. Enter any changes to the item you want and submit
   <p> New Serial Number : <input type="text" placeholder="Serial Number" name="serial_number" value=" <%=@good_instance.serial_number%>"></p>
   
   <p> New Distributor: <select name="distributor_id"></p>
+    <% binding.pry %>
     <% @distributor = Distributor.find(@good_instance.distributor_id)%>
     <%Distributor.all.each do |distributor| %>
     <option value="<%= distributor.id %>" <%="selected" if distributor.id == @good_instance.distributor_id%>> <%= @distributor.company %></option>

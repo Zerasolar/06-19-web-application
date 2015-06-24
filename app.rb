@@ -1,7 +1,7 @@
 #Need to run pry to test the driver and sinatra to connect it for the web.
 require "pry"
-require "sinatra"
-require "sinatra/reloader"
+# require "sinatra"
+# require "sinatra/reloader"
 #Empowering it with SQLite
 require "sqlite3"
 
